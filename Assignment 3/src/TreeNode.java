@@ -10,12 +10,39 @@ public class TreeNode {
 	
 	// Initialise variables for storing student data
 	private int studentNumber;
-	private int examMark;
+	private int studentMark;
 	private String studentName;
 	
 	// Initialise variables for next nodes/leafs
 	private TreeNode left;
 	private TreeNode right;
+	
+	/**
+	* Constructor for TreeNode with no data
+	*/
+	
+	public TreeNode() {
+	}
+	
+	/**
+    * Constructor for TreeNode with data
+    * 
+    * @param studentNumber students unique id number
+    * @param studentMark students mark from exam
+    * @param studentName students name
+    */
+	
+	public TreeNode(int studentNumber, int studentMark, String studentName) {
+		
+		// Set the data
+		this.studentNumber = studentNumber;
+		this.studentMark = studentMark;
+		this.studentName = studentName;
+		
+		// Set left and right leafs to null
+		this.left = null;
+		this.right = null;
+	}
 	
 	/**
 	 * @return the studentNumber
@@ -38,7 +65,7 @@ public class TreeNode {
 	 */
 	
 	public int getExamMark() {
-		return examMark;
+		return studentMark;
 	}
 	
 	/**
@@ -46,7 +73,7 @@ public class TreeNode {
 	 */
 	
 	public void setExamMark(int examMark) {
-		this.examMark = examMark;
+		this.studentMark = examMark;
 	}
 	
 	/**
