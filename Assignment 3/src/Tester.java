@@ -41,6 +41,12 @@ public class Tester {
 	public void processTree() {
 		
 	}
+	
+	private void traverseTreeTest() {
+		// Test Traverse Feature
+		treeOne.printTree();
+		
+	}
 
 
 	public static void main(String[] args) {
@@ -49,7 +55,7 @@ public class Tester {
 		
 		testMe.initialiseTree();
 		testMe.addToTree();
-		testMe.findInTree();
+		testMe.traverseTreeTest();
 
 	}
 }

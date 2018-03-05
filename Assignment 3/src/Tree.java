@@ -147,23 +147,60 @@ public class Tree {
 		}
 	}
 	
+	/**
+	 * Prints the tree by using recursion on the traverse tree method
+	 * 
+	 * @param none
+	 * @return none
+	 */
+	
 	public void printTree() {
+		// Print entire tree
+		traverseTree(root);
 		
 	}
 	
-	public void traverseTree(TreeNode upto) {
-		
-		// Start at the root
-		TreeNode markerNode = root;
-		
-		// Traverse left sub tree
-		markerNode = root.getLeft();
-		
-		// Consider the root of the subtree
+	/**
+	 * Method is used via recursion to display each node in the tree
+	 * 
+	 * @param markerNode the node used for reference
+	 * @return none
+	 */
+	
+	public void traverseTree(TreeNode markerNode) {
+
+		if(markerNode != null) {
+			
+			traverseTree(markerNode.getLeft());
+			
+			// Print data from node
+			System.out.println("\nStudent ID : " + markerNode.getStudentNumber());
+			System.out.println("Student Name : " + markerNode.getStudentName());
+			System.out.println("Student Exam Mark : " + markerNode.getExamMark());
+			
+			traverseTree(markerNode.getRight());
+		}
 	}
 	
-	public void deleteFromTree() {
+	/**
+	 * Deletes nodes from tree
+	 * 
+	 * @param idToBeRemoved
+	 * @return none
+	 */
+	
+	public void deleteFromTree(int idToBeRemoved) {
+		TreeNode nodeToBeDeleted = findInTree(idToBeRemoved);
 		
+		// If it can't be found tell user
+		if(nodeToBeDeleted == null) {
+			System.out.println("This Student ID was not found, try again.");
+		}
+		
+		// If node is just a leaf...
+		else if(nodeToBeDeleted.getRight() == null && nodeToBeDeleted.getLeft() == null){
+			
+		}
 	}
 	
 	/**
