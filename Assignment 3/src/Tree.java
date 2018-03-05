@@ -11,9 +11,6 @@ public class Tree {
 	// Initialise variables
 	private TreeNode root;
 	
-	//TODO DELTE ME
-	int indent;
-	
 	/**
 	 * Constructor for objects of class Tree
 	 * Creates the root of the Tree
@@ -23,13 +20,30 @@ public class Tree {
 		root = null;
 	}
 	
+	/**
+	 * @return the root
+	 */
 	public TreeNode getRoot() {
 		return root;
 	}
-	
+
+	/**
+	 * @param root the root to set
+	 */
 	public void setRoot(TreeNode root) {
 		this.root = root;
 	}
+
+	/**
+	 * 
+	 * Adds Student Data to a node in the Tree
+	 * 
+	 * @param studentNumber
+	 * @param studentMark
+	 * @param studentName
+	 * @return boolean containing status of placement into tree, false if not placed and true if placed
+	 */
+	
 	
 	public boolean addToTree(int studentNumber, int studentMark, String studentName) {
 
@@ -61,7 +75,6 @@ public class Tree {
 					
 					previousNode = currentNode;
 					
-					
 					if(newNode.getStudentNumber() < currentNode.getStudentNumber()) {
 						currentNode = currentNode.getLeft();
 					}
@@ -72,11 +85,11 @@ public class Tree {
 				}		
 				
 				if(newNode.getStudentNumber() < previousNode.getStudentNumber()) {
-					newNode = previousNode.getLeft();
+					previousNode.setLeft(newNode);
 				}
 				
 				else {
-					newNode = previousNode.getRight();
+					previousNode.setRight(newNode);
 				}
 				
 				placedNode = true;
@@ -85,6 +98,13 @@ public class Tree {
 		// Return the status of if node has been placed or not
 		return placedNode;
 	}
+	
+	/**
+	 * Checks if a student is in the tree via their ID number
+	 * 
+	 * @param studentNumber
+	 * @return treeNode object with their data, null if not in the tree
+	 */
 	
 	public TreeNode findInTree(int studentNumber) {
 		
@@ -111,12 +131,8 @@ public class Tree {
 			}
 			
 			// We then assume the current nodes studentNumber is greater than what we want so we go down right
-			else if(markerNode.getStudentNumber() < studentNumber) {
+			else{
 				markerNode = markerNode.getRight();
-			}
-			
-			else {
-				System.out.println("help");
 			}
 		}
 		
@@ -150,7 +166,22 @@ public class Tree {
 		
 	}
 	
-	public void isTreeEmpty() {
+	/**
+	 * Checks if the tree is empty or not
+	 * 
+	 * @param none
+	 * @return true if tree empty and false is not
+	 */
+	
+	public boolean isTreeEmpty() {
 		
+		boolean status = false;
+		
+		// If the root is null then the tree must be empty
+		if(root == null) {
+			status = true;
+		}
+				
+		return status;
 	}
 }

@@ -27,7 +27,7 @@ public class Tester {
 	}
 	
 	public void findInTree() {
-		TreeNode student = treeOne.findInTree(2647);
+		TreeNode student = treeOne.findInTree(1234);
 		
 		if(student != null) {
 			System.out.println("Student has been found");
