@@ -155,9 +155,12 @@ public class Tree {
 	 */
 	
 	public void printTree() {
-		// Print entire tree
-		traverseTree(root);
-		
+		if(root == null) {
+			System.out.println("\nTree Is Empty");
+		}
+		else {
+			traverseTree(root);
+		}
 	}
 	
 	/**

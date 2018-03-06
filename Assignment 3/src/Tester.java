@@ -8,13 +8,8 @@
 
 public class Tester {
 	
-	// Set Tree object
 	Tree treeOne = new Tree();
-	
-	public void initialiseTree() {
-		Tree treeOne = new Tree();
-	}
-	
+
 	public void addToTree() {
 		// Add names to tree
 		treeOne.addToTree(1527, 50, "Susan Lee");
@@ -53,7 +48,6 @@ public class Tester {
 		// Main method
 		Tester testMe = new Tester();
 		
-		testMe.initialiseTree();
 		testMe.addToTree();
 		testMe.traverseTreeTest();
 
