@@ -32,11 +32,7 @@ public class Tester {
 			System.out.println("Student has not been found");
 		}
 	}
-	
-	public void processTree() {
-		
-	}
-	
+
 	private void traverseTreeTest() {
 		// Test Traverse Feature
 		treeOne.printTree();

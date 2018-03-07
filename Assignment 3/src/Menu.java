@@ -39,6 +39,17 @@ public class Menu {
 		    case 3:
 		    	findInTree();
 		    break;
+		    
+		    // Case 4(Delete From Tree)
+		    case 4:
+		    	//TODO Delete from tree
+		    break;
+		    
+		    // Case 5 (Exit Program)
+		    case 5:
+		    	System.out.println("\nThe Program Has Exited");
+		    	System.exit(0);
+		    break;
 		}
 	}
 	
@@ -105,7 +116,14 @@ public class Menu {
     	}
     	
     	// Call addToTree, passing the new data entered
-    	studentTree.addToTree(studentId, studentExamMark, studentName);
+    	boolean placedStatus = studentTree.addToTree(studentId, studentExamMark, studentName);
+    	
+    	if(placedStatus) {
+    		System.out.println("\nThe Student Has Been Added To The Tree");
+    	}
+    	else {
+    		System.out.println("\nThe Student Has Not Been Added To The Tree\nThey Might Already Be In The Tree.");
+    	}
 	}
 	
 	/**

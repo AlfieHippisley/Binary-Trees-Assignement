@@ -119,7 +119,7 @@ public class Tree {
 		// Start at root of tree
 		markerNode = root;
 		
-		// While their are still nodes to check,
+		// While there are still nodes to check,
 		while(markerNode != null && foundNode == false) {
 			
 			// Does the current node match the node we are looking for?
