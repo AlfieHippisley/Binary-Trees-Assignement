@@ -1,6 +1,8 @@
 
 /**
- * TreeNode class for storing each nodes data
+ * TreeNode class for storing each nodes data and handling it
+ *
+ * Lecture slides were used as reference while writing code
  * 
  * @author Alfie Hippisley
  * @version 03/03/2018

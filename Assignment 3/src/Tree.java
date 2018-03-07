@@ -1,6 +1,8 @@
 
 /**
- * Tree class for TreeNode class
+ * Tree class for TreeNode class, deals with tree operations
+ * 
+ * Lecture slides were used as reference while writing code
  * 
  * @author Alfie Hippisley
  * @version 03/03/2018
@@ -156,10 +158,10 @@ public class Tree {
 	
 	public void printTree() {
 		if(root == null) {
-			System.out.println("\nTree Is Empty");
+			System.out.println("\nTree Is Empty, Returning To Menu");
 		}
 		else {
-			traverseTree(root);
+			inorderTraverseTree(root);
 		}
 	}
 	
@@ -170,18 +172,18 @@ public class Tree {
 	 * @return none
 	 */
 	
-	public void traverseTree(TreeNode markerNode) {
+	public void inorderTraverseTree(TreeNode markerNode) {
 
 		if(markerNode != null) {
 			
-			traverseTree(markerNode.getLeft());
+			inorderTraverseTree(markerNode.getLeft());
 			
 			// Print data from node
 			System.out.println("\nStudent ID : " + markerNode.getStudentNumber());
 			System.out.println("Student Name : " + markerNode.getStudentName());
 			System.out.println("Student Exam Mark : " + markerNode.getExamMark());
 			
-			traverseTree(markerNode.getRight());
+			inorderTraverseTree(markerNode.getRight());
 		}
 	}
 	
